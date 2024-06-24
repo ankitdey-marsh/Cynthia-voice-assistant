@@ -3,7 +3,6 @@ import google.generativeai as genai
 import os
 import time
 from google.cloud import texttospeech
-import winsound
 import random
 import weather as wth
 import whatsapp as wp
@@ -15,6 +14,7 @@ import about as abt
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import os
+import platform
 
 #   spotify api
 client_id= 'your-spotify-client-key'
@@ -117,7 +117,13 @@ def speak(output):
         os.mkdir(folder_path)
     with open(file_path, "wb") as out:
         out.write(response.audio_content)
-    winsound.PlaySound(file_path,winsound.SND_FILENAME)    
+    
+    if platform.system() == 'Windows':
+        import winsound
+        winsound.PlaySound(file_path,winsound.SND_FILENAME)   
+    else:
+        import subprocess
+        subprocess.call(["aplay",file_path]) 
 
 
 #   primary function to intoduce the bot to the user.
