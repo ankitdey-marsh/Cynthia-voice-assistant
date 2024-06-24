@@ -1,0 +1,6 @@
+azure.cognitiveservices.speech
+google.generativeai
+google.cloud
+pywhatkit
+spotipy
+requests
