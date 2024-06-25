@@ -11,9 +11,9 @@ A fast, versatile voice assistance that can handle daily tasks seemlessly.
 ## Getting Started
 - `$ git clone https://github.com/ankitdey-marsh/Cynthia-voice-assistant.git` - clone this project to your computer.
 - `$ cd Cynthia-voice-assistant` - go inside the project directory.
-- `python -m venv env` to create a vitual environment.    
-- `pip install -r requirements.txt` to install libraries.
+- Run `./setup.ps1` to setup dependencies and virtual environment.
 - `Python ./main.py` to execute the python file.
+- To deactivate the virtual environment, run `deactivate`.
 
 ## APIs and Services
 - __Gemini API__ for implementing generative AI.
